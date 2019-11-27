@@ -15,11 +15,11 @@ if [ -n "$SSH_CLIENT" ]; then
 
 	IPINFO="https://ipinfo.io/${CLIENT_IP}"
 
-	TEXT="${SERVERNAME}
-	Connection from *${CLIENT_IP}* as ${USER} on *${SRV_HOSTNAME}* (*${SRV_IP}*)
-	Date: ${DATE}
-	More informations: [${IPINFO}](${IPINFO})"
+	TEXT="<b>${SERVERNAME}</b>
+        Connection from ${CLIENT_IP} as ${USER} to ${SRV_IP}
+        Date: ${DATE}
+        More informations: ${IPINFO}"
 
-        curl -x http://${PROXY_USER}:${PROXY_PASS}@${PROXY_IP}:${PROXY_PORT} -s -d "chat_id=$i&text=${TEXT}&disable_web_page_preview=true&parse_mode=markdown" $URL > /dev/null
+        curl -x http://${PROXY_USER}:${PROXY_PASS}@${PROXY_IP}:${PROXY_PORT} -s -d "chat_id=$i&text=${TEXT}&disable_web_page_preview=true&parse_mode=html" $URL > /dev/null
 fi
 done
