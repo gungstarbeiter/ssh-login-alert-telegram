@@ -20,6 +20,6 @@ if [ -n "$SSH_CLIENT" ]; then
 	Date: ${DATE}
 	More informations: [${IPINFO}](${IPINFO})"
 
-        curl -x 'http://${PROXY_USER}:${PROXY_PASS}@${PROXY_IP}:${PROXY_PORT}'-s -d "chat_id=$i&text=${TEXT}&disable_web_page_preview=true&parse_mode=markdown" $URL > /dev/null
+        curl -x 'http://${PROXY_USER}:${PROXY_PASS}@${PROXY_IP}:${PROXY_PORT}' -s -d "chat_id=$i&text=${TEXT}&disable_web_page_preview=true&parse_mode=markdown" $URL > /dev/null
 fi
 done
