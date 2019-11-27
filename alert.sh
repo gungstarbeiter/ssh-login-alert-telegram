@@ -6,6 +6,7 @@ for i in "${USERID[@]}"
 do
 URL="https://api.telegram.org/bot${KEY}/sendMessage"
 DATE="$(date "+%d %b %Y %H:%M")"
+DATE="$(date "+%Z")"
 
 if [ -n "$SSH_CLIENT" ]; then
 	CLIENT_IP=$(echo $SSH_CLIENT | awk '{print $1}')
