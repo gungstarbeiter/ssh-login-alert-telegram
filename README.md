@@ -9,6 +9,7 @@ This fork connects to the API through the HTTP proxy, which allows the script to
 ### Requirement
 - curl
 - git (much easy to install)
+- http proxy
 
 ### Install
 1) Clone or download to /opt/ folder
