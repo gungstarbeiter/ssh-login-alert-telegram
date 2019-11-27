@@ -2,6 +2,8 @@
 
 Work on all popular linux system (Debian, Ubuntu, Arch Linux etc..)
 
+This fork connects to the API through the HTTP proxy, which allows the script to work in countries where telegram is blocked.
+
 ![Example](msg.png)
 
 ### Requirement
