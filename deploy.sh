@@ -10,6 +10,7 @@ EOF
 
 add_cronjob(){
 { crontab -l; echo "* * * * * /bin/bash $WARNINGSCRIPT_PATH"; } | crontab - 
+chmod +x $WARNINGSCRIPT_PATH
 }
 
 add_zsh () {
