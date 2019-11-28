@@ -8,6 +8,10 @@ bash $ALERTSCRIPT_PATH
 EOF
 }
 
+add_cronjob(){
+{ crontab -l; echo "* * * * * /bin/bash $WARNINGSCRIPT_PATH"; } | crontab - 
+}
+
 add_zsh () {
 cat <<EOF >> /etc/zsh/zshrc
 
@@ -17,9 +21,11 @@ EOF
 }
 
 ALERTSCRIPT_PATH="/opt/ssh-login-alert-telegram/alert.sh"
+WARNINGSCRIPT_PATH="/opt/ssh-login-alert-telegram/warning.sh"
 
 echo "Deploying alerts..."
 add_profiled
+add_cronjob
 
 echo "Check if ZSH is installed.."
 
