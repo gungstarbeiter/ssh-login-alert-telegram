@@ -7,6 +7,10 @@ which allows the script to work in countries where telegram is blocked.
 
 ![Example](msg.png)
 
+A notification about an unsuccessful login attempt has been added, which is important for tracking brute force attack attempts.
+
+![Example](warning.png)
+
 ### Requirement
 - curl
 - git (much easy to install)
