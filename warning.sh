@@ -9,7 +9,7 @@ URL="https://api.telegram.org/bot${KEY}/sendMessage"
 DATE="$(date "+%d %b %Y")"
 TZ="$(date "+%Z")"
 
-CHECK=$(awk -v d1="$(date --date="-1 min" "+%b %_d %H:%M")" -v d2="$(date "+%b %_d %H:%M")" '$0 > d1 && $0 < d2 || $0 ~ d2' /var/l$
+CHECK=$(awk -v d1="$(date --date="-1 min" "+%b %_d %H:%M")" -v d2="$(date "+%b %_d %H:%M")" '$0 > d1 && $0 < d2 || $0 ~ d2' /var/log/auth.log | grep -i "closed by authenticating")
 if [[ $CHECK == *"closed"* ]]; then
   ATTEMPT_USER=$(echo $CHECK | awk '{print $11}')
   ATTEMPT_IP=$(echo $CHECK | awk '{print $12}')
