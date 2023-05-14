@@ -19,6 +19,7 @@ A notification about an unsuccessful login attempt has been added, which is impo
 ### Install
 1) Clone or download to /opt/ folder
 ```cd /opt/ && git clone https://github.com/gungstarbeiter/ssh-login-alert-telegram```
+
    If telegram isn't blocked in your country run:
 ```cd /opt/ssh-login-alert-telegram && git checkout noproxy```
 
