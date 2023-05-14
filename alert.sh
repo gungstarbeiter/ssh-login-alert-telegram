@@ -22,6 +22,6 @@ if [ -n "$SSH_CLIENT" ]; then
 	TimeZone:${TZ}
 	More informations: ${IPINFO}"
 
-        curl -x http://${PROXY_USER}:${PROXY_PASS}@${PROXY_IP}:${PROXY_PORT} -s -d "chat_id=$i&text=${TEXT}&disable_web_page_preview=true&parse_mode=html" $URL > /dev/null
+        curl -s -d "chat_id=$i&text=${TEXT}&disable_web_page_preview=true&parse_mode=html" $URL > /dev/null
 fi
 done
